@@ -6,6 +6,7 @@ final class MainView: UIView {
        
         let view = EmptyView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
         return view
     }()
 
