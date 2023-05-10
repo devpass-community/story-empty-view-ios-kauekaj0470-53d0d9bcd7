@@ -6,15 +6,16 @@ class EmptyView: UIView {
         let element = UILabel()
         element.translatesAutoresizingMaskIntoConstraints = false
         element.text = "No data found"
-        element.textColor = .black
         element.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
         element.textAlignment = .center
+        element.textColor = .black
+        element.backgroundColor = .white
         return element
     }()
     
     // MARK: - Inits
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+     init() {
+         super.init(frame: .zero)
         buildViewHierarchy()
         setupConstraint()
     }
@@ -29,8 +30,10 @@ class EmptyView: UIView {
     
     func setupConstraint() {
         NSLayoutConstraint.activate([
-            noDataFoundLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            noDataFoundLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+            noDataFoundLabel.topAnchor.constraint(equalTo: topAnchor),
+            noDataFoundLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
+            noDataFoundLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            noDataFoundLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
 }
